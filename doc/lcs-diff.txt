@@ -18,7 +18,7 @@ API                                                             *lcs-diff-api*
 
 >lua
     --- @alias DiffRecordType "+"|"-"|"="
-    --- @alias DiffRecord { type: DiffRecordType, line: string }
+    --- @alias DiffRecord { type: DiffRecordType, line: string, linenr: number }
     
     --- @param tbl_a string[]
     --- @param tbl_b string[]

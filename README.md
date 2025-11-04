@@ -5,7 +5,7 @@ A longest common subsequence (LCS) file-diff implementation using Neovim's lua u
 ### API
 ```lua
 --- @alias DiffRecordType "+"|"-"|"="
---- @alias DiffRecord { type: DiffRecordType, line: string }
+--- @alias DiffRecord { type: DiffRecordType, line: string, linenr: number }
 
 --- @param tbl_a string[]
 --- @param tbl_b string[]
