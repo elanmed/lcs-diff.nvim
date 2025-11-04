@@ -1,0 +1,22 @@
+*lcs-diff.txt*                                   Last change: 2025 November 03
+
+==============================================================================
+Table of Contents                                 *lcs-diff-table-of-contents*
+
+Status ..................................................... |lcs-diff-status|
+
+==============================================================================
+`LCS-DIFF.NVIM`                                       *lcs-diff-lcs-diff.nvim*
+
+
+A longest common subsequence (LCS) file-diff implementation using Neovim's lua
+utility functions.
+
+
+                                                                              
+STATUS                                                       *lcs-diff-status*
+
+In progress
+
+
+vim:tw=78:ts=8:ft=help:norl:
