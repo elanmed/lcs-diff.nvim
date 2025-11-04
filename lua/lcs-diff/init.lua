@@ -1,6 +1,7 @@
 local M = {}
 
---- @alias DiffRecord { type: "+"|"-"|"=", line: string }
+--- @alias DiffRecordType "+"|"-"|"="
+--- @alias DiffRecord { type: DiffRecordType, line: string }
 
 --- @param tbl_a string[]
 --- @param tbl_b string[]
