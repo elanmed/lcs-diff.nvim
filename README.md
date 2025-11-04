@@ -1,0 +1,1 @@
+# lcs-diff.nvim
