@@ -18,27 +18,25 @@ M.diff = function(tbl_a, tbl_b)
 
   local populate_memo
 
-  --- @param tbl_a_inner string[]
-  --- @param tbl_b_inner string[]
   --- @param idx_a number
   --- @param idx_b number
-  populate_memo = function(tbl_a_inner, tbl_b_inner, idx_a, idx_b)
+  populate_memo = function(idx_a, idx_b)
     if memo[idx_a][idx_b] ~= -1 then return memo[idx_a][idx_b] end
 
-    if idx_a > #tbl_a_inner or idx_b > #tbl_b_inner then return 0 end
+    if idx_a > #tbl_a or idx_b > #tbl_b then return 0 end
 
-    if tbl_a_inner[idx_a] == tbl_b_inner[idx_b] then
-      memo[idx_a][idx_b] = 1 + populate_memo(tbl_a_inner, tbl_b_inner, idx_a + 1, idx_b + 1)
+    if tbl_a[idx_a] == tbl_b[idx_b] then
+      memo[idx_a][idx_b] = 1 + populate_memo(idx_a + 1, idx_b + 1)
     else
       memo[idx_a][idx_b] = math.max(
-        populate_memo(tbl_a_inner, tbl_b_inner, idx_a + 1, idx_b),
-        populate_memo(tbl_a_inner, tbl_b_inner, idx_a, idx_b + 1)
+        populate_memo(idx_a + 1, idx_b),
+        populate_memo(idx_a, idx_b + 1)
       )
     end
 
     return memo[idx_a][idx_b]
   end
-  populate_memo(tbl_a, tbl_b, 1, 1)
+  populate_memo(1, 1)
 
   --- @type DiffRecord[]
   local records = {}
