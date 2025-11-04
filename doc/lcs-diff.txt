@@ -3,7 +3,7 @@
 ==============================================================================
 Table of Contents                                 *lcs-diff-table-of-contents*
 
-Status ..................................................... |lcs-diff-status|
+API ........................................................... |lcs-diff-api|
 
 ==============================================================================
 `LCS-DIFF.NVIM`                                       *lcs-diff-lcs-diff.nvim*
@@ -14,9 +14,16 @@ utility functions.
 
 
                                                                               
-STATUS                                                       *lcs-diff-status*
+API                                                             *lcs-diff-api*
 
-In progress
-
+>lua
+    --- @alias DiffRecordType "+"|"-"|"="
+    --- @alias DiffRecord { type: DiffRecordType, line: string }
+    
+    --- @param tbl_a string[]
+    --- @param tbl_b string[]
+    --- @return DiffRecord[]
+    M.diff = function(tbl_a, tbl_b) end
+<
 
 vim:tw=78:ts=8:ft=help:norl:
